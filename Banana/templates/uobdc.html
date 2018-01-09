@@ -1,0 +1,158 @@
+{% extends 'layout.html' %}
+{% block body %}
+<style>
+.tab ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    margin-right: 63.8%;
+    margin-left: 5%;
+}
+
+.tab li {
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+
+.tab li:last-child {
+    border-right: none;
+}
+
+.tab li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 40px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* Change the link color to #111 (black) on hover */
+.tab li a:hover, a:active{
+    background-color: #111;
+}
+
+
+
+.tab2 ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+
+
+}
+.tab2 li {
+    float: left;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.tab2 li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 20px 84.9px;
+    text-decoration: none;
+    font-size: 16px;
+}
+.tab2 li:last-child {
+    border-right: none;
+}
+.tab2 li a:hover, a:active{
+    background-color: darkgray;
+}
+
+
+
+.title a:hover{
+    color: saddlebrown;
+}
+
+.title{
+    font-size: 18px;
+}
+
+
+
+</style>
+
+
+<link rel="stylesheet" href="C:\OOP\Project\Banana\static\css\debitcard.css">
+<div>
+
+    <div class = 'tab'>
+        <ul style="list-style: none">
+            <li><a href = /debitcard>DBS</a></li>
+            <li><a href = '/ocbcdc'>OCBC</a></li>
+            <li class = 'active'><a href = '/uobdc'>UOB</a></li>
+        </ul>
+    </div>
+
+    <div class="overall" style="border: 3px solid black; margin-bottom: 5%">
+        <div class="tab2">
+            <ul style="list-style: none">
+
+                <li><a href = '/popularuobdc'>More Popular</a></li>
+                <li><a href = ''>Shopping</a></li>
+                <li><a href = ''>Dining</a></li>
+                <li><a href="">Traveling</a></li>
+                <li><a href = ''>Entertainment</a></li>
+
+
+            </ul>
+        </div>
+
+
+
+        <div class= 'container'>
+            <div class= 'row'>
+                <div class= "col-md-4" >
+                    <img src="/static/images/uobdc.png" alt="SAP Logo" width="300px" height="250px"/>
+                    <p class="title"><a href="">UOB Debit Card</a></p><br>
+                    <p class = 'sec'>Up to 10% rebate with no minimum spending required</p><br>
+                </div>
+
+                <div class= "col-md-4">
+                    <img src="/static/images/uobdelight.png" alt="SAP Logo" width="300px" height="250px"/><br>
+                    <p class="title">UOB Delight Debit Card</p><br>
+                    <p class = 'sec'>0.5% rebate at Cold Storage, Market Place, Jasons, Giant and Guardian. <br> 10% off house brands at Cold Storage, Giant and Guardian</p><br>
+                </div>
+
+                <div class = 'col-md-4'>
+                    <img src="/static/images/uobdirect.png" alt="SAP Logo" width="300px" height="250px"/><br>
+                    <p class="title">UOB Direct Visa Debit Card</p><br>
+                    <p class = 'sec'>Travel perks and withdraw cash overseas with no additional changes</p><br>
+                </div>
+
+            </div>
+            <div class= "row">
+                <div class="col-md-4">
+                    <img src="/static/images/uobkris.png" alt="SAP Logo" width="300px" height="250px"/><br>
+                    <p class="title">KrisFlyer UOB Account</p><br>
+                    <p class = 'sec'>Up to 10% SMART$ rebate at over 900 participating merchants islandwide with no minimum spend</p><br>
+                </div>
+
+                <div class="col-md-4">
+                    <img src="/static/images/uoblady.png" alt="SAP Logo" width="300px" height="250px"/><br>
+                    <p class="title">UOB Lady's Debit Card</p><br>
+                    <p class = 'sec'>Earn SMART$ on your daily essentials at certain stores<br>1 SMART$ is equivalent to S$1 and you are able to use it to offset your next purchase</p><br>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+</div>
+{% endblock %}
+

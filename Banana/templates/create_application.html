@@ -1,0 +1,306 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    {% from "includes/_formhelper.html" import render_field %}
+    <h1>Application for card</h1>
+    <script>
+
+
+
+
+
+
+
+        $(document).ready(function () {
+
+            $('#dbsdc').show();
+            $('#ocbcdc').hide();
+            $('#uobdc').hide();
+            $('#dbscc').hide();
+            $('#ocbccc').hide();
+            $('#uobcc').hide();
+
+            $('input[name="bank"]').click(function () {
+                if ($(this).attr('value') == 'dbs') {
+                    if ($('input[name="card"]').click(function ()  {
+                        if ($(this).attr('value') == 'dc') {
+                            $('#dbsdc').show();
+                            $('#ocbcdc').hide();
+                            $('#uobdc').hide();
+                            $('#dbscc').hide();
+                            $('#ocbccc').hide();
+                            $('#uobcc').hide();
+                        }
+                        if ($(this).attr('value') == 'cc') {
+
+                            $('#dbsdc').hide();
+                            $('#ocbcdc').hide();
+                            $('#uobdc').hide();
+                            $('#dbscc').show();
+                            $('#ocbccc').hide();
+                            $('#uobcc').hide();
+                        }
+
+                    })
+                }
+            }
+
+
+
+                if ($(this).attr('value') == 'ocbc') {
+                    if ($('input[value =="dc"]', this).attr('checked', "true")) {
+                        $('#dbsdc').hide();
+                        $('#ocbcdc').show();
+                        $('#uobdc').hide();
+                        $('#dbscc').hide();
+                        $('#ocbccc').hide();
+                        $('#uobcc').hide();
+                    }
+                    else {
+                        if ($('input[value =="cc"]', this).attr('checked', "true")) {
+                            $('#dbsdc').hide();
+                            $('#ocbcdc').hide();
+                            $('#uobdc').hide();
+                            $('#dbscc').hide();
+                            $('#ocbccc').show();
+                            $('#uobcc').hide();
+                        }
+
+                    }
+                }
+
+
+                if ($(this).attr('value') == 'uob') {
+                    if ($('input[value =="dc"]', this).attr('checked', "true")) {
+                        $('#dbsdc').hide();
+                        $('#ocbcdc').show();
+                        $('#uobdc').hide();
+                        $('#dbscc').hide();
+                        $('#ocbccc').hide();
+                        $('#uobcc').hide();
+                    }
+                    else {
+                        if ($('input[value =="cc"]', this).attr('checked', "true")) {
+                            $('#dbsdc').hide();
+                            $('#ocbcdc').hide();
+                            $('#uobdc').hide();
+                            $('#dbscc').hide();
+                            $('#ocbccc').show();
+                            $('#uobcc').hide();
+                        }
+                    }
+                }
+            })
+         })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+    {% if form.errors %}
+    <div class="alert alert-danger">
+        <ul>
+            {% for field_name, field_errors in form.errors|dictsort if field_errors %}
+                {% for error in field_errors %}
+                    <li>{{ form[field_name].label }}: {{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+
+    <form method="POST" action="">
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="form-group">
+            <div class="form-row">
+                {{ render_field(form.card, class_="radio") }}
+            </div>
+        </div>
+
+         <div class="form-group">
+            <div class="form-row">
+                {{ render_field(form.bank, class_="radio") }}
+            </div>
+        </div>
+
+        <div id="dbsdc">
+            {{ render_field(form.dbsdc, class_="form-control") }}
+        </div>
+
+        <div id="ocbcdc">
+            {{ render_field(form.ocbcdc, class_="form-control") }}
+        </div>
+
+        <div id="uobdc">
+            {{ render_field(form.uobdc, class_="form-control") }}
+        </div>
+
+        <div id="dbscc">
+            {{ render_field(form.dbscc, class_="form-control") }}
+        </div>
+
+        <div id="ocbccc">
+            {{ render_field(form.ocbccc, class_="form-control") }}
+        </div>
+        <div id="uobcc">
+            {{ render_field(form.uobcc, class_="form-control") }}
+        </div>
+
+
+
+
+
+
+        <div class="form-group">
+
+            {{ render_field(form.title, class_="form-control") }}
+        </div>
+
+
+
+
+
+
+        <div class="form-group">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    {{ render_field(form.name, class_="form-control") }}
+                </div>
+                <div class="form-group col-md-4">
+                    {{ render_field(form.nameoncard, class_="form-control") }}
+                </div>
+                <div class="form-group col-md-4">
+                    {{ render_field(form.nric, class_="form-control") }}
+                </div>
+
+
+
+
+            </div>
+        </div>
+        <div class = 'form-group'>
+            <div class="form-group col-md-4">
+                {{ render_field(form.local, class_="form-control") }}
+            </div>
+            <div class="'form-group col-md-4">
+                {{ render_field(form.date_of_birth, class_="form-control") }}
+            </div>
+            <div class="'form-group col-md-4">
+                {{ render_field(form.phone_no, class_="form-control") }}
+            </div>
+        </div>
+
+
+
+        <div class = 'form-group'>
+            <div class="form-group col-md-4">
+                {{ render_field(form.self_employed, class_="form-control") }}
+            </div>
+            <div class="'form-group col-md-4">
+                {{ render_field(form.occupation, class_="form-control") }}
+            </div>
+            <div class="'form-group col-md-4">
+                {{ render_field(form.email, class_="form-control") }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-row">
+                {{ render_field(form.address, class_="form-control") }}
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div id="cc">
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        {{ render_field(form.supplementary, class_="form-control") }}
+
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{ render_field(form.relationship, class_="form-control") }}
+
+                    </div>
+
+                </div>
+            </div>
+           <div class="form-group col-md-4">
+                {{ render_field(form.title1, class_="form-control") }}
+           </div>
+           <div class="form-group col-md-4">
+                {{ render_field(form.name1, class_="form-control") }}
+           </div>
+           <div class="form-group col-md-4">
+                {{ render_field(form.nameoncard1, class_="form-control") }}
+           </div>
+           <div class="form-group col-md-4">
+                {{ render_field(form.local1, class_="form-control") }}
+           </div>
+           <div class="form-group col-md-4">
+                {{ render_field(form.nric1, class_="form-control") }}
+           </div>
+           <div class="form-group col-md-4">
+                {{ render_field(form.date_of_birth1, class_="form-control") }}
+           </div>
+           <div class="form-group col-md-4">
+                {{ render_field(form.phone_no1, class_="form-control") }}
+           </div>
+           <div class="form-group col-md-4">
+                {{ render_field(form.self_employed1, class_="form-control") }}
+           </div>
+           <div class="form-group col-md-4">
+                {{ render_field(form.occupation1, class_="form-control") }}
+           </div>
+           <div class="form-group col-md-4">
+                {{ render_field(form.email1, class_="form-control") }}
+           </div>
+           <div class="form-group col-md-4">
+                {{ render_field(form.address1, class_="form-control") }}
+           </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="form-row">
+                <div class="form-group col-md-11">
+                </div>
+                <div class="form-group col-md-1">
+                    <input type="submit" value="Update" class="btn btn-info"/>
+                </div>
+            </div>
+        </div>
+
+    </form>
+{% endblock %}
+

@@ -1,0 +1,156 @@
+{% extends 'layout.html' %}
+{% block body %}
+<style>
+.tab ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    margin-right: 63.8%;
+    margin-left: 5%;
+}
+
+.tab li {
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+
+.tab li:last-child {
+    border-right: none;
+}
+
+.tab li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 40px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* Change the link color to #111 (black) on hover */
+.tab li a:hover, a:active{
+    background-color: #111;
+}
+
+
+
+.tab2 ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+
+
+}
+.tab2 li {
+    float: left;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.tab2 li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 20px 84.9px;
+    text-decoration: none;
+    font-size: 16px;
+}
+.tab2 li:last-child {
+    border-right: none;
+}
+.tab2 li a:hover, a:active{
+    background-color: darkgray;
+}
+
+
+
+.title a:hover{
+    color: saddlebrown;
+}
+
+.title{
+    font-size: 18px;
+}
+#back{
+    float: right;
+    margin-right: 15px;
+}
+
+
+</style>
+
+
+<link rel="stylesheet" href="C:\OOP\Project\Banana\static\css\debitcard.css">
+<div>
+
+    <div class = 'tab'>
+        <ul style="list-style: none">
+            <li class = 'active'><a href = /debitcard>DBS</a></li>
+            <li><a href = '/ocbcdc'>OCBC</a></li>
+            <li><a href = '/uobdc'>UOB</a></li>
+        </ul>
+    </div>
+
+    <div class="overall" style="border: 3px solid black; margin-bottom: 5%">
+        <div class="tab2">
+            <ul style="list-style: none">
+
+                <li class = "active"><a href = '/populardbsdc'>More Popular</a></li>
+                <li><a href = '/shoppingdbsdc'>Shopping</a></li>
+                <li><a href = ''>Dining</a></li>
+                <li><a href="">Traveling</a></li>
+                <li><a href = ''>Entertainment</a></li>
+
+
+            </ul>
+        </div>
+
+
+
+        <div class= 'container'>
+            <div class= 'row'>
+                <div class= "col-md-4" >
+                    <img src="/static/images/visadebitcard.png" alt="SAP Logo" width="300px" height="250px"/>
+                    <p class="title"><a href="/CardDetails">DBS Visa Debit Card</a></p><br>
+                    <p class = 'sec'>Start tapping and be rewarded with 5% Cashback<br>No foreign exchange fee with MCA</p><br>
+                </div>
+
+                <div class= "col-md-4">
+                    <img src="/static/images/posbpassion.png" alt="SAP Logo" width="300px" height="250px"/><br>
+                    <p class="title">Passion POSB Debit Card</p><br>
+                    <p class = 'sec'>Free Passion membership<br>1% Cashback at Takashimaya Department Store<br>Everyday convenience</p><br>
+                </div>
+
+                <div class = 'col-md-4'>
+                    <img src="/static/images/safradbs.png" alt="SAP Logo" width="300px" height="250px"/><br>
+                    <p class="title">SAFRA DBS Debit Card</p><br>
+                    <p class = 'sec'>2% Cash Rebate* on local MasterCard<br>1% Cash Rebate* on online shopping!<br>Exclusive SAFRA privileges</p><br>
+                </div>
+            </div>
+
+            <div class = 'row'>
+
+                <div class="col-md-4">
+                    <img src="/static/images/dbspla.png" alt="SAP Logo" width="300px" height="250px"/><br>
+                    <p class="title"><a href = '/'>DBS UnionPay Platinum Debit Card</a></p><br>
+                    <p class = 'sec'>1% Cashback on overseas & online spend! (Card you can use in Singapore and China)<br>24-hour Concierge</p><br>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        <button onClick="location.href='/debitcard'"  id = 'back'>Back</button>
+        <br><br>
+
+    </div>
+
+</div>
+{% endblock %}
